@@ -5,6 +5,8 @@ from settings import WIDTH, HEIGHT, FPS, SQUARE_SIZE
 from board import draw_board
 from pieces import draw_pieces
 from game import select_piece, move_piece, draw_selection
+running=True
+from home import show_home
 
 pygame.init()
 
@@ -12,6 +14,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Chess Game")
 
 clock = pygame.time.Clock()
+show_home()
 
 running = True
 first_click = True
