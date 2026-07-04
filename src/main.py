@@ -1,10 +1,10 @@
 import pygame
 import sys
 
-from settings import *
+from settings import WIDTH, HEIGHT, FPS, SQUARE_SIZE
 from board import draw_board
 from pieces import draw_pieces
-from game import select_piece, move_piece
+from game import select_piece, move_piece, draw_selection
 
 pygame.init()
 
@@ -21,6 +21,7 @@ while running:
     clock.tick(FPS)
 
     draw_board(screen)
+    draw_selection(screen)
     draw_pieces(screen)
 
     for event in pygame.event.get():
@@ -42,7 +43,7 @@ while running:
                 move_piece(row, col)
                 first_click = True
 
-    pygame.display.update()
+    pygame.display.flip()
 
 pygame.quit()
 sys.exit()
